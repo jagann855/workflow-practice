@@ -1,1 +1,23 @@
+name: Hello World Workflow
 
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow when pushing to the main branch
+
+jobs:
+  run:
+    runs-on: ubuntu-latest  # Use the latest version of Ubuntu
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # Check out the code from the repository
+
+    - name: Set up Python
+      uses: actions/setup-python@v4  # Set up the Python environment
+      with:
+        python-version: '3.9'  # Specify the Python version to use
+
+    - name: Run Hello World script
+      run: |
+        python hello.py  # Run the script
