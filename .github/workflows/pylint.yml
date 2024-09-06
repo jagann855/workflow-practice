@@ -1,29 +1,15 @@
-name: Run hello.py
+name: python_file_build
 
-# Trigger the workflow on push or pull request
-on: 
+on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [main]
+  pull_request: 
+    branches: [main]
 
-jobs:
-  run-python:
+job:
+  build:
     runs-on: ubuntu-latest
-    
-    steps:
-      # Checkout the repository code
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      # Set up Python environment
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'  # Specify Python version
 
-      # Run hello.py
-      - name: Run hello.py
-        run: python hello.py
+    steps:
+     name: checkout code
+     uses: 
