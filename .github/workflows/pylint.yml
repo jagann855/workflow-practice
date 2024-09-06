@@ -1,6 +1,6 @@
 name: python_file_build
 
-on:
+on: 
   push:
     branches: [main]
   pull_request: 
@@ -15,5 +15,5 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: run script
-        run: echo Hello, world!
+        run: python hello.py
      
